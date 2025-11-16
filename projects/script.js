@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -10,9 +9,9 @@ $(document).ready(function () {
         $('.navbar').removeClass('nav-toggle');
 
         if (window.scrollY > 60) {
-            document.querySelector('#scroll-top').classList.add('active');
+            $('#scroll-top').addClass('active');
         } else {
-            document.querySelector('#scroll-top').classList.remove('active');
+            $('#scroll-top').removeClass('active');
         }
     });
 });
@@ -27,26 +26,22 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-// fetch projects start
+// Fetch projects
 function getProjects() {
-    return fetch("projects.json") 
-        .then(response => response.json())
-        .then(data => data);
+    return fetch("projects.json").then(res => res.json());
 }
 
 function showProjects(projects) {
-    let projectsContainer = document.querySelector(".work .box-container");
-    let projectsHTML = "";
+    const container = $(".work .box-container");
+    container.html("");
+
     projects.forEach(project => {
-        // CHỈNH ĐƯỜNG DẪN ẢNH
-        projectsHTML += `
+        container.append(`
         <div class="grid-item ${project.category}">
             <div class="box tilt" style="width: 380px; margin: 1rem">
                 <img draggable="false" src="assets/images/projects/${project.image}.png" alt="${project.name}" />
                 <div class="content">
-                    <div class="tag">
-                        <h3>${project.name}</h3>
-                    </div>
+                    <div class="tag"><h3>${project.name}</h3></div>
                     <div class="desc">
                         <p>${project.desc}</p>
                         <div class="btns">
@@ -56,21 +51,20 @@ function showProjects(projects) {
                     </div>
                 </div>
             </div>
-        </div>`;
+        </div>
+        `);
     });
-    projectsContainer.innerHTML = projectsHTML;
 
-    // isotope filter
-    var $grid = $('.box-container').isotope({
+    // Isotope filter
+    const $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
-        masonry: { columnWidth: 200 }
+        layoutMode: 'fitRows'
     });
 
     $('.button-group').on('click', 'button', function () {
         $('.button-group').find('.is-checked').removeClass('is-checked');
         $(this).addClass('is-checked');
-        var filterValue = $(this).attr('data-filter');
+        const filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
 }

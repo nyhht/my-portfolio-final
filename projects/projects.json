@@ -1,7 +1,7 @@
 [
   {
     "name": "Drug Store Management System",
-    "desc": "Software to manage drug store activities.The software supports functions such as adding new products and updates product information, inventory tracking, and order management, staff",
+    "desc": "Software to manage drug store activities. Supports adding products, inventory tracking, and orders.",
     "image": "nhathuoc",
     "category": "mern",
     "links": {
@@ -11,7 +11,7 @@
   },
   {
     "name": "Personnel Management Mobile App",
-    "desc": "Application to assist enterprises in managing staff, departments, timekeeping, payroll and statistics. Simple interface, easy to use; clear delegation of authority between staff and management.",
+    "desc": "App to manage staff, departments, payroll, and statistics. Simple interface, easy to use.",
     "image": "nhansu",
     "category": "mern",
     "links": {
@@ -20,8 +20,8 @@
     }
   },
   {
-    "name": "Applying MapReduce model to Naive Bayes algorithm for news classification",
-    "desc": "Help the Naive Bayes algorithm process and classify a huge amount of news by leveraging the parallel and distributed processing power of the MapReduce (Hadoop) model",
+    "name": "Applying MapReduce model to Naive Bayes algorithm",
+    "desc": "Naive Bayes algorithm processes huge news datasets using MapReduce (Hadoop).",
     "image": "naive",
     "category": "mern",
     "links": {
@@ -30,8 +30,8 @@
     }
   },
   {
-    "name": "Sales management information system for Agomi mini supermarket",
-    "desc": "Helps manage mini supermarkets effectively and conveniently.",
+    "name": "Sales management info system for Agomi mini supermarket",
+    "desc": "Manages mini supermarket efficiently and conveniently.",
     "image": "sieuthi",
     "category": "mern",
     "links": {
@@ -40,8 +40,8 @@
     }
   },
   {
-    "name": "Building a library management information system",
-    "desc": "Automate book, user, and loan/return management",
+    "name": "Library management information system",
+    "desc": "Automates book, user, and loan/return management.",
     "image": "thuvien",
     "category": "lamp",
     "links": {
@@ -50,8 +50,8 @@
     }
   },
   {
-    "name": "Cloud computing applications to build online sales systems",
-    "desc": "Responding to the growing online shopping needs of consumers, especially young people",
+    "name": "Cloud computing app for online sales",
+    "desc": "Supports growing online shopping needs, especially for young users.",
     "image": "dientoan",
     "category": "basicweb",
     "links": {
@@ -59,5 +59,4 @@
       "code": "https://github.com/nyhht"
     }
   }
-
 ]

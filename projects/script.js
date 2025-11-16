@@ -21,10 +21,10 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         document.title = "Projects | Portfolio Hiếu";
-        $("#favicon").attr("href", "../../assets/images/avatar.jpg");
+        $("#favicon").attr("href", "../assets/images/avatar.jpg");
     } else {
         document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href", "../../assets/images/favhand.png");
+        $("#favicon").attr("href", "../assets/images/favhand.png");
     }
 });
 
@@ -41,7 +41,7 @@ function showProjects(projects) {
         container.append(`
         <div class="grid-item ${project.category}">
             <div class="box tilt" style="width:380px; margin:1rem">
-                <img draggable="false" src="../../assets/images/projects/${project.image}.PNG" alt="${project.name}" />
+                <img draggable="false" src="../assets/images/projects/${project.image}.PNG" alt="${project.name}" />
                 <div class="content">
                     <div class="tag"><h3>${project.name}</h3></div>
                     <div class="desc">
@@ -57,13 +57,12 @@ function showProjects(projects) {
         `);
     });
 
-    // Initialize Isotope
+    // Isotope filter
     const $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows'
     });
 
-    // Filter button click
     $('.button-group').on('click', 'button', function () {
         $('.button-group').find('.is-checked').removeClass('is-checked');
         $(this).addClass('is-checked');

@@ -26,9 +26,8 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-// Fetch JSON and display projects
+// Fetch JSON và hiển thị project
 function getProjects() {
-    // JSON nằm trong folder "projects/"
     return fetch("./projects/projects.json").then(res => res.json());
 }
 
@@ -36,14 +35,14 @@ function showProjects(projects) {
     const container = $(".work .box-container");
     container.html("");
 
-    // URL tuyệt đối cho ảnh GitHub Pages
+    // URL tuyệt đối cho ảnh trên GitHub Pages
     const baseUrl = "https://nyhht.github.io/my-portfolio-final/assets/images/projects/";
 
     projects.forEach(project => {
         container.append(`
         <div class="grid-item ${project.category}">
             <div class="box tilt" style="width:380px; margin:1rem">
-                <img draggable="false" src="${baseUrl}${project.image}.png" alt="${project.name}">
+                <img draggable="false" src="${baseUrl}${project.image}" alt="${project.name}">
                 <div class="content">
                     <div class="tag"><h3>${project.name}</h3></div>
                     <div class="desc">

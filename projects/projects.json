@@ -2,7 +2,7 @@
   {
     "name": "Drug Store Management System",
     "desc": "Software to manage drug store activities. Supports adding products, inventory tracking, and orders.",
-    "image": "nhathuoc",
+    "image": "nhathuoc.png",
     "category": "mern",
     "links": {
       "view": "https://github.com/nyhht",
@@ -12,7 +12,7 @@
   {
     "name": "Personnel Management Mobile App",
     "desc": "App to manage staff, departments, payroll, and statistics. Simple interface, easy to use.",
-    "image": "nhansu",
+    "image": "nhansu.png",
     "category": "mern",
     "links": {
       "view": "https://github.com/nyhht",
@@ -22,7 +22,7 @@
   {
     "name": "Applying MapReduce model to Naive Bayes algorithm",
     "desc": "Naive Bayes algorithm processes huge news datasets using MapReduce (Hadoop).",
-    "image": "naive",
+    "image": "naive.png",
     "category": "mern",
     "links": {
       "view": "https://github.com/nyhht",
@@ -32,7 +32,7 @@
   {
     "name": "Sales management info system for Agomi mini supermarket",
     "desc": "Manages mini supermarket efficiently and conveniently.",
-    "image": "sieuthi",
+    "image": "sieuthi.png",
     "category": "mern",
     "links": {
       "view": "https://github.com/nyhht",
@@ -42,7 +42,7 @@
   {
     "name": "Library management information system",
     "desc": "Automates book, user, and loan/return management.",
-    "image": "thuvien",
+    "image": "thuvien.png",
     "category": "lamp",
     "links": {
       "view": "https://github.com/nyhht",
@@ -52,7 +52,7 @@
   {
     "name": "Cloud computing app for online sales",
     "desc": "Supports growing online shopping needs, especially for young users.",
-    "image": "dientoan",
+    "image": "dientoan.png",
     "category": "basicweb",
     "links": {
       "view": "https://github.com/nyhht",

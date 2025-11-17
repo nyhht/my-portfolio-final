@@ -19,24 +19,23 @@ $(document).ready(function () {
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         document.title = "Projects | Portfolio Hiếu";
-        $("#favicon").attr("href", "./assets/images/avatar.jpg");
+        $("#favicon").attr("href", "../assets/images/avatar.jpg");
     } else {
         document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href", "./assets/images/favhand.png");
+        $("#favicon").attr("href", "../assets/images/favhand.png");
     }
 });
 
 // Fetch JSON và hiển thị project
 function getProjects() {
-    return fetch("./projects/projects.json").then(res => res.json());
+    return fetch("./projects.json").then(res => res.json());
 }
 
 function showProjects(projects) {
     const container = $(".work .box-container");
     container.html("");
 
-    // URL tuyệt đối cho ảnh trên GitHub Pages
-    const baseUrl = "https://nyhht.github.io/my-portfolio-final/assets/images/projects/";
+    const baseUrl = "../assets/images/projects/";
 
     projects.forEach(project => {
         container.append(`
@@ -58,6 +57,7 @@ function showProjects(projects) {
         `);
     });
 
+    // Isotope filter
     const $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows'
@@ -68,6 +68,14 @@ function showProjects(projects) {
         $(this).addClass('is-checked');
         const filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
+    });
+
+    // Tilt effect
+    VanillaTilt.init(document.querySelectorAll(".tilt"), {
+        max: 15,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.2,
     });
 }
 

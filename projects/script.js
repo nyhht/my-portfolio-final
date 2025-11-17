@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    // Navbar toggle
     $('#menu').click(function () {
         $(this).toggleClass('fa-times');
         $('.navbar').toggleClass('nav-toggle');
@@ -17,20 +16,19 @@ $(document).ready(function () {
     });
 });
 
-// Favicon & title change
 document.addEventListener('visibilitychange', function () {
     if (document.visibilityState === "visible") {
         document.title = "Projects | Portfolio Hiếu";
-        $("#favicon").attr("href", "../assets/images/avatar.jpg");
+        $("#favicon").attr("href", "./assets/images/avatar.jpg");
     } else {
         document.title = "Come Back To Portfolio";
-        $("#favicon").attr("href", "../assets/images/favhand.png");
+        $("#favicon").attr("href", "./assets/images/favhand.png");
     }
 });
 
-// Fetch projects JSON
+// Fetch JSON
 function getProjects() {
-    return fetch("projects.json").then(res => res.json());
+    return fetch("./projects.json").then(res => res.json());
 }
 
 function showProjects(projects) {
@@ -41,7 +39,7 @@ function showProjects(projects) {
         container.append(`
         <div class="grid-item ${project.category}">
             <div class="box tilt" style="width:380px; margin:1rem">
-                <img draggable="false" src="../assets/images/projects/${project.image}.PNG" alt="${project.name}" />
+                <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}">
                 <div class="content">
                     <div class="tag"><h3>${project.name}</h3></div>
                     <div class="desc">
@@ -57,7 +55,6 @@ function showProjects(projects) {
         `);
     });
 
-    // Isotope filter
     const $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows'
@@ -71,5 +68,4 @@ function showProjects(projects) {
     });
 }
 
-// Load projects
 getProjects().then(showProjects);

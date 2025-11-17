@@ -26,7 +26,7 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-// Fetch JSON và hiển thị project
+// Fetch JSON từ cùng folder
 function getProjects() {
     return fetch("./projects.json").then(res => res.json());
 }
@@ -35,6 +35,7 @@ function showProjects(projects) {
     const container = $(".work .box-container");
     container.html("");
 
+    // Ảnh đi lên 1 cấp
     const baseUrl = "../assets/images/projects/";
 
     projects.forEach(project => {
@@ -57,7 +58,6 @@ function showProjects(projects) {
         `);
     });
 
-    // Isotope filter
     const $grid = $('.box-container').isotope({
         itemSelector: '.grid-item',
         layoutMode: 'fitRows'
@@ -69,15 +69,6 @@ function showProjects(projects) {
         const filterValue = $(this).attr('data-filter');
         $grid.isotope({ filter: filterValue });
     });
-
-    // Tilt effect
-    VanillaTilt.init(document.querySelectorAll(".tilt"), {
-        max: 15,
-        speed: 400,
-        glare: true,
-        "max-glare": 0.2,
-    });
 }
 
-// Load projects
 getProjects().then(showProjects);

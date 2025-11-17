@@ -26,20 +26,23 @@ document.addEventListener('visibilitychange', function () {
     }
 });
 
-// Fetch JSON
+// Fetch JSON and display projects
 function getProjects() {
-    return fetch("./projects.json").then(res => res.json());
+    return fetch("projects.json").then(res => res.json());
 }
 
 function showProjects(projects) {
     const container = $(".work .box-container");
     container.html("");
 
+    const baseUrl = "https://nyhht.github.io/my-portfolio-final/assets/images/projects/";
+
     projects.forEach(project => {
+        // ensure file names match exactly the repo
         container.append(`
         <div class="grid-item ${project.category}">
             <div class="box tilt" style="width:380px; margin:1rem">
-                <img draggable="false" src="./assets/images/projects/${project.image}.png" alt="${project.name}">
+                <img draggable="false" src="${baseUrl}${project.image}.png" alt="${project.name}">
                 <div class="content">
                     <div class="tag"><h3>${project.name}</h3></div>
                     <div class="desc">
@@ -68,4 +71,5 @@ function showProjects(projects) {
     });
 }
 
+// Call the function
 getProjects().then(showProjects);
